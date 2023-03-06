@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper', 
+const swiper = new Swiper('.swiper-default', 
 {
     loop: true,
     slidesPerView: 3,
@@ -27,6 +27,17 @@ const swiper = new Swiper('.swiper',
 
   });
   
+const swiper2 = new Swiper('.swiper-style1', 
+{
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      el: '.swiper-style1 .swiper-pagination',
+      clickable : true,
+    },
+  });
+
   let menu_icon = document.querySelector(".menu__icon");
 
   let menu_drawer = document.querySelector(".header-mob__container");
@@ -60,7 +71,6 @@ const hoverOfferEffect = event =>{
   service_items.forEach(el => {
     el.classList.contains(active_offer) ? el.classList.add('_active') : el.classList.remove('_active');
   });
-
 }
 
 
@@ -74,3 +84,25 @@ const toggleThemeMode = () => {
 };
 
 input.onchange = toggleThemeMode;
+
+//stiky header//
+
+window.addEventListener("scroll", () => {
+  let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+  if(scrollTop > 50){
+    document.querySelector('.header').classList.add("sticky");
+  }else{
+    document.querySelector('.header').classList.remove("sticky");
+  }
+});
+
+// const showElement = document.getElementById('portfolio-scroll');
+// const hiddenElement = document.getElementById('element-hidden-1');
+
+// showElement.addEventListener('click', function() {
+//   if (hiddenElement.style.display == 'none') {
+//     hiddenElement.style.display = 'block';
+//   } else {
+//     hiddenElement.style.display = 'none';
+//   }
+// });
