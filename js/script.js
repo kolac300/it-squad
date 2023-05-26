@@ -20,8 +20,30 @@ const mainSwiper = new Swiper(".swiper-default__main", {
   },
 }
 
-
 )
+
+const RewiewsSwiper = new Swiper('.swiper-default_rewiews',
+  {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 70,
+    breakpoints: {
+      // when window width is >= 320px
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      // when window width is >= 480px
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+    },
+  });
 const swiper = new Swiper('.swiper-default',
   {
     loop: true,
