@@ -2,6 +2,7 @@
     padding: 0;
     border: 0;
     margin: 0;
+
 }
 
 *,
@@ -11,7 +12,9 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+::selection{
+    color: inherit;
+}
 :focus,
 :active {
     outline: none;
@@ -70,7 +73,6 @@ button::-moz-focus-inner {
 
 a,
 a:visited {
-    text-decoration-color: blue;
     text-decoration: none;
 
 }
@@ -375,20 +377,28 @@ body.dark .portfolio__description-items {
     color: #fff;
 }
 
-
-body.dark .item-review {
+body.dark body.dark .item-review {
     background-color: #0B0F15;
     color: white;
 }
 
+body.dark .header-block_subtitle,
+body.dark .button__arrow,
+body.dark .header__contact-mob .contact-mob_tel a,
+body.dark .header__contact-mob .contact-mob_mail a,
 body.dark .item-review .item-review_top__text,
 body.dark .item-review__text,
 body.dark .item-review_top__title {
     color: white;
 }
-
-body.dark .button__arrow {
-    color: white;
+body.dark .swiper-pagination{
+    display: none;
+}
+body.dark .item-review{
+    background-color: #0B0F15;
+}
+body.dark .item-review:hover{
+    box-shadow: 1px 0 30px 2px #43434370;
 }
 
 body.dark .button__arrow img {
@@ -501,7 +511,7 @@ body.dark .switch__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    cursor: grab;
     transition: 0.4s;
     border-radius: 30px;
     padding: 0 10px;
@@ -573,7 +583,7 @@ body.dark .icon__moon {
 
 /*---------------slider---------------*/
 .swiper-default__main {
-    cursor: pointer;
+    cursor: grab;
 }
 
 .swiper {
@@ -634,6 +644,23 @@ body.dark .swiper-pagination-bullet-active {
     border: 4px solid #1D1D1D;
 }
 
+
+.item-portfolio__background{
+    margin-top:25px;
+  
+}
+.item-portfolio__background img{
+border-radius: 30px;
+filter: brightness(0.7);
+}
+.swiper-slide-active .background__text{
+cursor: pointer;
+}
+.swiper-default .swiper-slide-active img{
+    transition: .6s;
+    transform: scale(1.1) ;
+    filter: brightness(0.9);
+}
 /*----------------burger menu---------------------*/
 
 
@@ -696,6 +723,11 @@ body.dark .swiper-pagination-bullet-active {
     color: inherit;
 }
 
+.header__contact-mob .contact-mob_tel a,
+.header__contact-mob .contact-mob_mail a {
+    color: black;
+}
+
 .contact-mob_tel {
     margin-bottom: 14px;
     color: black;
@@ -708,7 +740,9 @@ body.dark .swiper-pagination-bullet-active {
 
 .items__icons-mob {
     padding: 10px 30px 22px 30px;
-
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
 .social__item-mob:not(:last-child) {
@@ -995,7 +1029,7 @@ img {
     text-align: start;
 }
 
-@media(max-width:480px) {
+@media(max-width:767px) {
     .main-block__title {
         margin: 0px 0px 20px 0px;
     }
@@ -1040,9 +1074,9 @@ img {
     }
 
     .main-block__resume {
-        bottom: -21px;
-        right: -11px;
-        width: 100px;
+        bottom: 10px;
+        right: -4px;
+       
     }
 
     .resume-top__image {
@@ -1059,18 +1093,18 @@ img {
     }
 
     .resume-top__title {
-        font-size: 5px;
+        font-size: 9px;
         margin: 0px 0px 1px 0px;
     }
 
     .resume-top__text {
-        font-size: 3px;
+        font-size: 6px;
     }
 
     .resume__text {
         margin: 0px 10px 11px 10px;
         text-align: start;
-        font-size: 5px;
+        font-size: 9px;
     }
 }
 
@@ -1429,6 +1463,9 @@ img {
         color: #fff;
         transform: translateX(-50%);
     }
+    .portfolio__description-info {
+        width: 100% !important; 
+    }
 }
 
 
@@ -1512,11 +1549,16 @@ img {
 }
 
 .swiper-style1 {
-    width: 50%;
+    width: 100%;
 }
 
 .portfolio__description-image {
     width: 100%;
+
+}
+.portfolio__description-image img {
+    cursor: grab;
+    border-radius: 40px;
 }
 
 .portfolio__description-info {
@@ -1567,9 +1609,11 @@ img {
 .review__items {}
 
 .item-review {
-    background: #FFFFFF;
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+    background: #fffcfc;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    cursor: grab;
     border-radius: 20px;
+    min-height: 422px;
 }
 
 .item-review:not(:last-child) {
@@ -1581,10 +1625,14 @@ img {
 }
 
 .item-review_top__image {
-    margin: 49.25px 30px 25px 40px;
+    height: 70px; 
+    width: 70px;
+    margin:35.25px 15px 14px 26px
 }
+
 .item-review_top__image img {
-  border-radius: 50%;
+    height: 70px; 
+    width: 70px;
 }
 
 .item-review_top__info {
@@ -1618,7 +1666,7 @@ img {
     .reviews__header {
         margin: 60px 0px 30px 0px;
     }
-    
+
 }
 
 /*---------collaboration---------------*/
@@ -1822,7 +1870,15 @@ img {
     }
 }
 
-@media screen and (max-width:600px) {}
+@media screen and (max-width:800px) {
+    .item-review{
+        min-height: 335px;
+    }
+    .item-review_top{
+        align-items: center;
+        justify-content: center;
+    }
+}
 
 /*-----------------------BubelsBackground------------------------*/
 .blue-bouble {

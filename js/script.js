@@ -1,13 +1,14 @@
 
 const mainSwiper = new Swiper(".swiper-default__main", {
   loop: true,
+  spaceBetween: 70,
   autoplay: {
-    delay: 5000,
+    delay: 3000,
   },
   slidesPerView: 1,
-  spaceBetween: 70,
   breakpoints: {
     // when window width is >= 320px
+
     0: {
       slidesPerView: 1,
       spaceBetween: 10
@@ -28,13 +29,11 @@ const RewiewsSwiper = new Swiper('.swiper-default_rewiews',
     slidesPerView: 3,
     spaceBetween: 70,
     breakpoints: {
-      // when window width is >= 320px
       0: {
         slidesPerView: 1,
         spaceBetween: 10
       },
-      // when window width is >= 480px
-      600: {
+      800: {
         slidesPerView: 2,
         spaceBetween: 30
       },
@@ -46,6 +45,7 @@ const RewiewsSwiper = new Swiper('.swiper-default_rewiews',
   });
 const swiper = new Swiper('.swiper-default',
   {
+    centeredSlides: true,
     loop: true,
     slidesPerView: 3,
     spaceBetween: 70,
@@ -54,32 +54,29 @@ const swiper = new Swiper('.swiper-default',
       clickable: true,
     },
     breakpoints: {
-      // when window width is >= 320px
       0: {
         slidesPerView: 1,
         spaceBetween: 10
       },
-      // when window width is >= 480px
+      767: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
       1024: {
         slidesPerView: 3,
         spaceBetween: 30
       },
     },
-
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
   });
 
 const swiper2 = new Swiper('.swiper-style1',
   {
+
     loop: false,
     slidesPerView: 1,
-    spaceBetween: 10,
+    spaceBetween: 6,
     pagination: {
-      el: '.swiper-style1 .swiper-pagination',
+      el: '.swiper-pagination',
       clickable: true,
     },
   });
@@ -147,39 +144,66 @@ window.addEventListener("scroll", () => {
 let descriptions = {
   vitalgym: {
     images: [
-      'http://via.placeholder.com/640x360',
-      'http://via.placeholder.com/640x360',
-      'http://via.placeholder.com/640x360'
+      './img/portfolio/vital1.png',
+      './img/portfolio/vital2.png',
+      './img/portfolio/vital3.png'
     ],
     name: "Vital Gym",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nisi id dolore porro nam nemo, omnis a sit architecto aut. Est quisquam voluptatem repudiandae, sequi aliquam quam reiciendis omnis consequuntur?",
-    date: "April 2019",
-    tech: "HTML5, SCSS, JavaScript",
+    description: `● Website Redesign - brought new clients to the owner
+    ● QA & Bugfixing
+    ● Mobile speed optimization - gave less bounce rate
+    ● Created lots of Email Flows & Campaigns & Letters which brought thousands of pounds`,
+    date: "Nov 2021",
+    tech: "Email & Newsletter , Klaviyo , Front-End Development , Web Development , Shopify Theme , Shopify Templates , Shopify",
     url: "vitalgym.co"
   },
   mybacs: {
     images: [
-      'https://loremflickr.com/640/360',
-      'https://loremflickr.com/640/360',
-      'https://loremflickr.com/640/360'
+      './img/portfolio/MyBacs1.png',
+      './img/portfolio/MyBacs2.png',
+      './img/portfolio/MyBacs3.png'
     ],
     name: "MyBacs",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nisi id dolore porro nam nemo, omnis a sit architecto aut. Est quisquam voluptatem repudiandae, sequi aliquam quam reiciendis omnis consequuntur?",
+    description: "Swiss company specializing in the human microbiome.They're selling probiotic products for holistic health and planetary care.",
     date: "April 2022",
-    tech: "HTML5, SCSS, JavaScript",
+    tech: "QA Testing , SEO Setup & Configuration , Recharge , Shopify Theme , Shopify Templates , Shopify SEO , Shopify Plus , JavaScript , SCSS , Liquid , Shopify",
     url: "mybacs.com"
   },
-  beautytables: {
+  urbanhome: {
     images: [
-      'https://placekitten.com/640/360',
-      'https://placekitten.com/640/360',
-      'https://placekitten.com/640/360'
+      './img/portfolio/urban1.png',
+      './img/portfolio/urban1.png',
+      './img/portfolio/urban1.png'
     ],
     name: "Beauty Tables",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nisi id dolore porro nam nemo, omnis a sit architecto aut. Est quisquam voluptatem repudiandae, sequi aliquam quam reiciendis omnis consequuntur?",
-    date: "April 2022",
-    tech: "HTML5, SCSS, JavaScript",
-    url: "beautytables.co.uk"
+    description: "",
+    date: "OCT 2021",
+    tech: "JavaScript , Liquid , Shopify Theme , Shopify Templates , Shopify",
+    url: "urbanhome.co"
+  },
+  knives: {
+    images: [
+      './img/portfolio/wolf1.jpg',
+      './img/portfolio/wolf2.jpg',
+      './img/portfolio/wolf3.png'
+    ],
+    name: "Wolfgangs knives",
+    description: "Website conversion rate optimization, ui/ux improvements, theme QA, ST. Patrick's day email and website campaign development (currently live on the theme).",
+    date: "April 2023",
+    tech: "JavaScript , CSS , Liquid , Shopify Theme , Shopify , Shopify Templates , SEO Setup & Configuration , Website Optimization",
+    url: "wolfgangs.de"
+  },
+  printed: {
+    images: [
+      './img/portfolio/printed1.png',
+      './img/portfolio/printed2.png',
+      './img/portfolio/printed3.png'
+    ],
+    name: "Printed Momories",
+    description: "Printed Memories is a company that specializes in creating customized, high-quality photo books and other printed products. The company was founded in 2018 by a group of passionate photographers who wanted to provide a way for people to preserve and showcase their cherished memories in a tangible, long-lasting format.",
+    date: "March 2023",
+    tech: "Front-End Development , International Development , JavaScript , Shopify Apps , Liquid , Shopify , Shopify SEO , Shopify Templates",
+    url: "printedmemories.com"
   }
 }
 
@@ -263,14 +287,14 @@ let switchToDark = document.querySelector('.switch')
 let switchToDarkInput = document.querySelector('.switch input')
 let body = document.querySelector("body");
 
-switchToDark.addEventListener('click',()=>{
-  if(switchToDarkInput.checked){
+switchToDark.addEventListener('click', () => {
+  if (switchToDarkInput.checked) {
     switchToDarkInput.checked = false;
     body.classList.toggle("dark");
-  }else{
+  } else {
     switchToDarkInput.checked = true;
     body.classList.toggle("dark");
   }
 
-  
+
 })
