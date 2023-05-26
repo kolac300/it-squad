@@ -1,97 +1,122 @@
-const swiper = new Swiper('.swiper-default', 
-{
+
+const mainSwiper = new Swiper(".swiper-default__main", {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+  slidesPerView: 1,
+  spaceBetween: 70,
+  breakpoints: {
+    // when window width is >= 320px
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 10
+    },
+    // when window width is >= 480px
+    1024: {
+      slidesPerView: 1,
+      spaceBetween: 30
+    },
+  },
+}
+
+
+)
+const swiper = new Swiper('.swiper-default',
+  {
     loop: true,
     slidesPerView: 3,
     spaceBetween: 70,
     pagination: {
       el: '.swiper-pagination',
-      clickable : true,
+      clickable: true,
     },
     breakpoints: {
-        // when window width is >= 320px
-        0: {
-          slidesPerView: 1,
-          spaceBetween: 10
-        },
-        // when window width is >= 480px
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30
-        },
+      // when window width is >= 320px
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 10
       },
-  
+      // when window width is >= 480px
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+    },
+
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
 
   });
-  
-const swiper2 = new Swiper('.swiper-style1', 
-{
+
+const swiper2 = new Swiper('.swiper-style1',
+  {
     loop: false,
     slidesPerView: 1,
     spaceBetween: 10,
     pagination: {
       el: '.swiper-style1 .swiper-pagination',
-      clickable : true,
+      clickable: true,
     },
   });
 
-  let menu_icon = document.querySelector(".menu__icon");
+let menu_icon = document.querySelector(".menu__icon");
+let navigationLinks = [...document.querySelectorAll(".menu__link-mob ")]
+let menu_drawer = document.querySelector(".header-mob__container");
 
-  let menu_drawer = document.querySelector(".header-mob__container");
 
 
 
-  const toggleMenu = event => {
-    if (event.target.closest(".menu__icon")){
-        menu_drawer.classList.toggle("active");
-        menu_icon.classList.toggle("active")
-    }
+const toggleMenu = event => {
+  if (navigationLinks.includes(event.target)) {
+    menu_drawer.classList.toggle("active");
+    menu_icon.classList.toggle("active")
   }
+  if (event.target.closest(".menu__icon")) {
+    menu_drawer.classList.toggle("active");
+    menu_icon.classList.toggle("active")
+  }
+}
 
-  menu_icon.addEventListener("click",toggleMenu);
-
+menu_icon.addEventListener("click", toggleMenu);
+navigationLinks.forEach(link => {
+  link.addEventListener("click", toggleMenu);
+});
 //hover effect for offers
 
 let offer_items = document.querySelectorAll(".offer-items");
 let service_items = document.querySelectorAll(".our-services__info");
 
-const hoverOfferEffect = event =>{
+const hoverOfferEffect = event => {
   offer_items.forEach(el => {
-    if(el == event.target.closest('.offer-items')) {
+    if (el == event.target.closest('.offer-items')) {
       el.classList.add('_active');
-    }else {
+    } else {
       el.classList.remove('_active');
     }
   });
   let active_offer = document.querySelector('.offer-items._active').dataset.id;
-  console.log(active_offer.length)
   service_items.forEach(el => {
     el.classList.contains(active_offer) ? el.classList.add('_active') : el.classList.remove('_active');
   });
 }
 
 
-offer_items.forEach(el=>el.addEventListener("click",hoverOfferEffect));
+offer_items.forEach(el => el.addEventListener("click", hoverOfferEffect));
 
-const input = document.querySelector("input");
-const body = document.querySelector("body");
 
-const toggleThemeMode = () => {
-  body.classList.toggle("dark");
-};
 
-input.onchange = toggleThemeMode;
+
 
 //stiky header//
 
 window.addEventListener("scroll", () => {
   let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-  if(scrollTop > 50){
+  if (scrollTop > 50) {
     document.querySelector('.header').classList.add("sticky");
-  }else{
+  } else {
     document.querySelector('.header').classList.remove("sticky");
   }
 });
@@ -148,13 +173,13 @@ const updateDescriptionInfo = event => {
   let description_date = document.querySelector('.portfolio__description-text_date');
   let description_url = document.querySelector('.portfolio__description-text_url');
   let description_tech = document.querySelector('.portfolio__description-text_tech');
-  
+
 
   let current_project = event.target.closest('.portfolio__item').dataset.project;
-  for (let [key, value] of Object.entries(descriptions)){
-    if (key == current_project){
+  for (let [key, value] of Object.entries(descriptions)) {
+    if (key == current_project) {
       //Update images
-      for (let i = 0; i < value.images.length; i++){
+      for (let i = 0; i < value.images.length; i++) {
         description_images[i].src = value.images[i];
       }
       //Update info
@@ -168,11 +193,11 @@ const updateDescriptionInfo = event => {
 }
 
 const togglePortfolioDescription = event => {
-  if (event.target.closest('.portfolio__btn-close')){
+  if (event.target.closest('.portfolio__btn-close')) {
     portfolio_description.classList.add('_hidden');
     document.querySelector('.portfolio__container').scrollIntoView({ behavior: 'smooth', block: "start" });
-    return ;
-  }else{
+    return;
+  } else {
     updateDescriptionInfo(event);
     portfolio_description.classList.remove('_hidden');
     portfolio_description.scrollIntoView({ behavior: 'smooth', block: "start" });
@@ -182,3 +207,48 @@ const togglePortfolioDescription = event => {
 
 portfilio_items.forEach(el => el.addEventListener('click', togglePortfolioDescription));
 close_description_btn.addEventListener('click', togglePortfolioDescription)
+
+
+
+
+// nav desctop actve link logic 
+let allLinks = document.querySelectorAll(".menu__link");
+let allSections = document.querySelectorAll(".section--for__link");
+document.addEventListener('scroll', () => {
+  allSections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute("id");
+    console.log('first', id);
+    if (top + 170 >= offset && top < offset + height) {
+      allLinks.forEach(link => {
+        if (link) {
+          link.classList.remove('_active');
+        }
+      });
+      if (id === null) {
+        document.querySelector(".menu__link[href='#']").classList.add('_active');
+      } else {
+        document.querySelector(".menu__link[href='#" + id + "']").classList.add('_active');
+      }
+
+    }
+  });
+});
+
+let switchToDark = document.querySelector('.switch')
+let switchToDarkInput = document.querySelector('.switch input')
+let body = document.querySelector("body");
+
+switchToDark.addEventListener('click',()=>{
+  if(switchToDarkInput.checked){
+    switchToDarkInput.checked = false;
+    body.classList.toggle("dark");
+  }else{
+    switchToDarkInput.checked = true;
+    body.classList.toggle("dark");
+  }
+
+  
+})
