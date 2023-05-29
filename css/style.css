@@ -753,7 +753,7 @@ body.dark .swiper-pagination-bullet-active {
 
 .item-portfolio__background img {
     border-radius: 30px;
-    filter: brightness(0.7);
+    filter: brightness(0.6);
 }
 
 .swiper-slide-active .background__text {
@@ -763,7 +763,7 @@ body.dark .swiper-pagination-bullet-active {
 .swiper-default .swiper-slide-active img {
     transition: .6s;
     transform: scale(1.1);
-    filter: brightness(0.9);
+    filter: brightness(0.8);
 }
 
 /*----------------burger menu---------------------*/
@@ -1670,7 +1670,7 @@ img {
 
 .portfolio__description-image img {
     cursor: grab;
-    border-radius: 40px;
+    border-radius: 7px;
 }
 
 .portfolio__description-info {
@@ -1745,6 +1745,7 @@ img {
 .item-review_top__image img {
     height: 70px;
     width: 70px;
+    min-width: 70px;
 }
 
 .item-review_top__info {
