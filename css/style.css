@@ -12,9 +12,11 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-::selection{
+
+::selection {
     color: inherit;
 }
+
 :focus,
 :active {
     outline: none;
@@ -330,8 +332,6 @@ h4 {
     align-items: center;
 }
 
-.header-block_title {}
-
 .header-block_title:not(:last-child) {
     margin: 20px 0px 20px 0px;
 }
@@ -340,14 +340,113 @@ h4 {
     color: var(--color-primary);
     margin: 0px 0px 20px 0px;
     padding-top: 170px;
+    position: relative;
+}
+
+.header-block_subtitle .ball1 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 75px);
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    z-index: 100;
+    display: block;
+    background: black;
+    background: radial-gradient(circle at 100px 100px, var(--color-yellow), #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
+
+.header-block_subtitle .ball2 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 75px);
+    background: radial-gradient(circle at 100px 100px, var(--color-primary), #000);
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-block_subtitle .ball3 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 75px);
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    z-index: 100;
+    background: radial-gradient(circle at 100px 100px, var(--color-yellow), #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-block_subtitle .ball4 {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 75px);
+    background: radial-gradient(circle at 100px 100px, var(--color-primary), #000);
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.ball1,
+.ball2,
+.ball3,
+.ball4 {
+    color: white;
+}
+
+body.dark .ball1,
+body.dark .ball2,
+body.dark .ball3,
+body.dark .ball4 {
+    color: rgb(0, 255, 13);
+
+}
 
 @media(max-width:767px) {
     .header-block_subtitle {
         padding-top: 90px;
     }
+
+    .header-block_subtitle .ball1,
+    .header-block_subtitle .ball2,
+    .header-block_subtitle .ball3,
+    .header-block_subtitle .ball4 {
+        left: calc(50% - 40px);
+        height: 80px;
+        width: 80px;
+    }
+
+    .header-block_subtitle .ball1,
+    .header-block_subtitle .ball3 {
+        background: radial-gradient(circle at 60px 40px, var(--color-yellow), #000);
+    }
+
+
+    .header-block_subtitle .ball2,
+    .header-block_subtitle .ball4 {
+
+        background: radial-gradient(circle at 60px 40px, var(--color-primary), #000);
+
+    }
+
 }
 
 @media(max-width:480px) {
@@ -391,13 +490,16 @@ body.dark .item-review__text,
 body.dark .item-review_top__title {
     color: white;
 }
-body.dark .swiper-pagination{
+
+body.dark .swiper-pagination {
     display: none;
 }
-body.dark .item-review{
+
+body.dark .item-review {
     background-color: #0B0F15;
 }
-body.dark .item-review:hover{
+
+body.dark .item-review:hover {
     box-shadow: 1px 0 30px 2px #43434370;
 }
 
@@ -453,7 +555,7 @@ body:not(.dark) .header__logo .dark {
 }
 
 body.dark {
-    background-color: #1D1D1D;
+    background: #1D1D1D;
 }
 
 body.dark .button__primary {
@@ -492,7 +594,6 @@ body.dark .switch__wrapper {
 }
 
 .switch {
-    display: inline;
     position: relative;
     width: 100px;
     height: 50px;
@@ -522,8 +623,8 @@ body.dark .switch__wrapper {
     width: 100px;
     display: flex;
     position: absolute;
-    top: 87%;
-    left: -103%;
+    top: 24%;
+    left: 0%;
     justify-content: center;
 
 
@@ -563,7 +664,7 @@ body.dark .icon__moon {
 
 .icon__sun {
     z-index: 200;
-    left: 16px;
+    left: 14px;
 
 }
 
@@ -645,22 +746,26 @@ body.dark .swiper-pagination-bullet-active {
 }
 
 
-.item-portfolio__background{
-    margin-top:25px;
-  
+.item-portfolio__background {
+    margin-top: 25px;
+
 }
-.item-portfolio__background img{
-border-radius: 30px;
-filter: brightness(0.7);
+
+.item-portfolio__background img {
+    border-radius: 30px;
+    filter: brightness(0.7);
 }
-.swiper-slide-active .background__text{
-cursor: pointer;
+
+.swiper-slide-active .background__text {
+    cursor: pointer;
 }
-.swiper-default .swiper-slide-active img{
+
+.swiper-default .swiper-slide-active img {
     transition: .6s;
-    transform: scale(1.1) ;
+    transform: scale(1.1);
     filter: brightness(0.9);
 }
+
 /*----------------burger menu---------------------*/
 
 
@@ -752,7 +857,12 @@ cursor: pointer;
 /*------------------------------------------------*/
 body {
     position: relative;
-    transition: 0.4s;
+    -webkit-transition:200ms, ease;
+    -moz-transition: 200ms, ease;
+    -ms-transition: 200ms, ease;
+    -o-transition:200ms, ease;
+    transition: 200ms, ease;
+    transition: 200ms, ease;
 
 }
 
@@ -1076,7 +1186,7 @@ img {
     .main-block__resume {
         bottom: 10px;
         right: -4px;
-       
+
     }
 
     .resume-top__image {
@@ -1463,8 +1573,9 @@ img {
         color: #fff;
         transform: translateX(-50%);
     }
+
     .portfolio__description-info {
-        width: 100% !important; 
+        width: 100% !important;
     }
 }
 
@@ -1556,6 +1667,7 @@ img {
     width: 100%;
 
 }
+
 .portfolio__description-image img {
     cursor: grab;
     border-radius: 40px;
@@ -1625,13 +1737,13 @@ img {
 }
 
 .item-review_top__image {
-    height: 70px; 
+    height: 70px;
     width: 70px;
-    margin:35.25px 15px 14px 26px
+    margin: 35.25px 15px 14px 26px
 }
 
 .item-review_top__image img {
-    height: 70px; 
+    height: 70px;
     width: 70px;
 }
 
@@ -1871,10 +1983,11 @@ img {
 }
 
 @media screen and (max-width:800px) {
-    .item-review{
+    .item-review {
         min-height: 335px;
     }
-    .item-review_top{
+
+    .item-review_top {
         align-items: center;
         justify-content: center;
     }
@@ -1895,8 +2008,8 @@ img {
     width: 31px;
     height: 31px;
     border-radius: 50%;
-    z-index: -1;
-    opacity: 50%;
+    z-index: 1;
+    opacity: 30%;
 }
 
 .blue__bouble1 {
