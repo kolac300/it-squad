@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', () => {
 
   const mainSwiper = new Swiper(".swiper-default__main", {
     loop: true,
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     slidesPerView: 1,
     breakpoints: {
       // when window width is >= 320px
-  
+
       0: {
         slidesPerView: 1,
         spaceBetween: 10
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded',()=>{
       },
     },
   }
-  
+
   )
-  
+
   const RewiewsSwiper = new Swiper('.swiper-default_rewiews',
     {
       loop: true,
@@ -69,10 +69,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         },
       },
     });
-  
+
   const swiper2 = new Swiper('.swiper-style1',
     {
-  
+
       loop: false,
       slidesPerView: 1,
       spaceBetween: 6,
@@ -81,14 +81,14 @@ document.addEventListener('DOMContentLoaded',()=>{
         clickable: true,
       },
     });
-  
+
   let menu_icon = document.querySelector(".menu__icon");
   let navigationLinks = [...document.querySelectorAll(".menu__link-mob ")]
   let menu_drawer = document.querySelector(".header-mob__container");
-  
-  
-  
-  
+
+
+
+
   const toggleMenu = event => {
     if (navigationLinks.includes(event.target)) {
       menu_drawer.classList.toggle("active");
@@ -99,16 +99,16 @@ document.addEventListener('DOMContentLoaded',()=>{
       menu_icon.classList.toggle("active")
     }
   }
-  
+
   menu_icon.addEventListener("click", toggleMenu);
   navigationLinks.forEach(link => {
     link.addEventListener("click", toggleMenu);
   });
   //hover effect for offers
-  
+
   let offer_items = document.querySelectorAll(".offer-items");
   let service_items = document.querySelectorAll(".our-services__info");
-  
+
   const hoverOfferEffect = event => {
     offer_items.forEach(el => {
       if (el == event.target.closest('.offer-items')) {
@@ -122,12 +122,12 @@ document.addEventListener('DOMContentLoaded',()=>{
       el.classList.contains(active_offer) ? el.classList.add('_active') : el.classList.remove('_active');
     });
   }
-  
-  
+
+
   offer_items.forEach(el => el.addEventListener("click", hoverOfferEffect));
-  
+
   //stiky header//
-  
+
   window.addEventListener("scroll", () => {
     let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
     if (scrollTop > 50) {
@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       document.querySelector('.header').classList.remove("sticky");
     }
   });
-  
+
   //Portfolio items
   let descriptions = {
     vitalgym: {
@@ -203,12 +203,12 @@ document.addEventListener('DOMContentLoaded',()=>{
       url: "printedmemories.com"
     }
   }
-  
+
   let portfilio_items = document.querySelectorAll('.portfolio__item');
   let portfolio_description = document.querySelector('.portfolio__description-wraper');
   let close_description_btn = document.querySelector('.portfolio__btn-close');
-  
-  
+
+
   const updateDescriptionInfo = event => {
     let description_images = document.querySelectorAll('.portfolio__description-image img');
     let description_name = document.querySelector('.portfolio__description-title');
@@ -216,8 +216,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     let description_date = document.querySelector('.portfolio__description-text_date');
     let description_url = document.querySelector('.portfolio__description-text_url');
     let description_tech = document.querySelector('.portfolio__description-text_tech');
-  
-  
+
+
     let current_project = event.target.closest('.portfolio__item').dataset.project;
     for (let [key, value] of Object.entries(descriptions)) {
       if (key == current_project) {
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     }
   }
-  
+
   const togglePortfolioDescription = event => {
     if (event.target.closest('.portfolio__btn-close')) {
       portfolio_description.classList.add('_hidden');
@@ -246,24 +246,25 @@ document.addEventListener('DOMContentLoaded',()=>{
       portfolio_description.scrollIntoView({ behavior: 'smooth', block: "start" });
     }
   }
-  
-  
+
+
   portfilio_items.forEach(el => el.addEventListener('click', togglePortfolioDescription));
   close_description_btn.addEventListener('click', togglePortfolioDescription)
-  
-  
-  
-  
+
+
+
+
   // nav desctop actve link logic 
   let allLinks = document.querySelectorAll(".menu__link");
   let allSections = document.querySelectorAll(".section--for__link");
+  let up_scroll_btn = document.querySelector('.up_scroll_btn__wrapper');
+
   document.addEventListener('scroll', () => {
     allSections.forEach(sec => {
       let top = window.scrollY;
       let offset = sec.offsetTop;
       let height = sec.offsetHeight;
       let id = sec.getAttribute("id");
-      console.log('first', id);
       if (top + 170 >= offset && top < offset + height) {
         allLinks.forEach(link => {
           if (link) {
@@ -275,16 +276,22 @@ document.addEventListener('DOMContentLoaded',()=>{
         } else {
           document.querySelector(".menu__link[href='#" + id + "']").classList.add('_active');
         }
-  
+
       }
     });
+    if (window.scrollY <= 0) {
+      up_scroll_btn.style.display = "none"
+    } else {
+      up_scroll_btn.style.display = "block"
+    }
+
   });
-  
+
   let switchToDark = document.querySelector('.switch')
   let switchToDarkInput = document.querySelector('.switch input')
   let body = document.querySelector("body");
   let html = document.querySelector("html");
-  
+
   switchToDark.addEventListener('click', () => {
     if (switchToDarkInput.checked) {
       switchToDarkInput.checked = false;

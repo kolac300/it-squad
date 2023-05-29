@@ -459,6 +459,40 @@ body.dark .ball4 {
     }
 }
 
+.up_scroll_btn__wrapper {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 100;
+    display: none;
+}
+
+.up_scroll_btn {
+    width: 100px;
+    height: 50px;
+    border-radius: 15px;
+    color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e900;
+    background-image: linear-gradient(180deg, #e3e900 0%, #0514f2 100%);
+    color: white;
+    transition: .5s;
+
+}
+
+body.dark .up_scroll_btn {
+    background-color: red;
+    background-image: linear-gradient(180deg, red 0%, #0514f2 100%);
+}
+
+
+.up_scroll_btn:hover {
+
+    box-shadow: rgba(17, 0, 255, 0.4) -5px 5px, rgba(17, 0, 255, 0.3) -10px 10px, rgba(17, 0, 255, 0.2) -15px 15px, rgba(17, 0, 255, 0.1) -20px 20px, rgba(17, 0, 255, 0.05) -25px 25px;
+}
+
 /*---------perekluchatel' na dark temu--------------*/
 
 
@@ -580,13 +614,14 @@ body.dark .header_text.p {
     position: fixed;
     width: 100px;
     height: 50px;
-    z-index: 300000000;
+    z-index: 100;
     bottom: 20px;
     left: 20px;
     border: 1px solid var(--color-primary);
     border-radius: 30px;
     text-align: center;
     background-color: white;
+    cursor: pointer;
 }
 
 body.dark .switch__wrapper {
@@ -612,7 +647,7 @@ body.dark .switch__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: grab;
+    cursor: pointer;
     transition: 0.4s;
     border-radius: 30px;
     padding: 0 10px;
@@ -857,10 +892,10 @@ body.dark .swiper-pagination-bullet-active {
 /*------------------------------------------------*/
 body {
     position: relative;
-    -webkit-transition:200ms, ease;
+    -webkit-transition: 200ms, ease;
     -moz-transition: 200ms, ease;
     -ms-transition: 200ms, ease;
-    -o-transition:200ms, ease;
+    -o-transition: 200ms, ease;
     transition: 200ms, ease;
     transition: 200ms, ease;
 
