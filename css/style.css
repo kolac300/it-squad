@@ -2330,7 +2330,6 @@ body.dark .pop_up {
     border-radius: 15px;
     text-align: center;
     width: 50%;
-    height: 60%;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -2351,4 +2350,22 @@ body.dark .pop_up {
 body.dark .pop_up div {
     background-color: #191b19;
     color: #e9e2e2;
+}
+
+@media (max-width:767px) {
+    .pop_up div {
+        width: 85%;
+    }
+
+    .pop_up div h3 {
+        font-size: 20px;
+    }
+
+    .pop_up div p {
+        font-size: 14px;
+    }
+
+    .pop_up div{
+        padding:10px;
+    }
 }
