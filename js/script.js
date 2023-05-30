@@ -29,6 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 70,
+      pagination: {
+        el: '.swiper-pagination_rewiews',
+        clickable: true,
+      },
       breakpoints: {
         0: {
           slidesPerView: 1,
@@ -51,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 3,
       spaceBetween: 70,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination-default',
         clickable: true,
       },
       breakpoints: {
@@ -77,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       slidesPerView: 1,
       spaceBetween: 6,
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination-style1',
         clickable: true,
       },
     });
@@ -141,18 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let descriptions = {
     vitalgym: {
       images: [
-        './img/portfolio/vital1.png',
-        './img/portfolio/vital2.png',
-        './img/portfolio/vital3.png'
+        './img/portfolio/Bru1.png',
+        './img/portfolio/Bru2.png',
+        './img/portfolio/Bru3.png'
       ],
-      name: "Vital Gym",
-      description: `● Website Redesign - brought new clients to the owner
-      ● QA & Bugfixing
-      ● Mobile speed optimization - gave less bounce rate
-      ● Created lots of Email Flows & Campaigns & Letters which brought thousands of pounds`,
-      date: "Nov 2021",
-      tech: "Email & Newsletter , Klaviyo , Front-End Development , Web Development , Shopify Theme , Shopify Templates , Shopify",
-      url: "vitalgym.co"
+      name: "BRU",
+      description: `BRU machines are known for their sleek design, ease of use, and quality of construction. They offer a variety of features, including programmable settings, and multiple cup sizes. The project goals involve a website redesign with, multicurrency, and multilanguage capabilities using Shopify Markets !`,
+      date: "Apr 2023",
+      tech: "Shopify , International Development , JavaScript , Liquid , Front-End Development , HTML , Search Engine Optimization , Shopify SEO , Shopify Templates , International Sales",
+      url: "bru.shop"
     },
     mybacs: {
       images: [
@@ -160,28 +161,30 @@ document.addEventListener('DOMContentLoaded', () => {
         './img/portfolio/MyBacs2.png',
         './img/portfolio/MyBacs3.png'
       ],
-      name: "MyBacs",
-      description: "Swiss company specializing in the human microbiome.They're selling probiotic products for holistic health and planetary care.",
-      date: "April 2022",
+      name: "mybacs®",
+      description: `mybacs® is a Swiss company specializing in the human microbiome.They're selling probiotic products for holistic health and planetary care. 
+      They came to us to improve their Shopify website UX & speed, launch new swiss-localizated store and get new customers.
+      All steps gave to the company higher reputation in the Health & Beauty industry, brought new customers & followers and increased monthly revenue.`,
+      date: "Jun 2022",
       tech: "QA Testing , SEO Setup & Configuration , Recharge , Shopify Theme , Shopify Templates , Shopify SEO , Shopify Plus , JavaScript , SCSS , Liquid , Shopify",
       url: "mybacs.com"
     },
     urbanhome: {
       images: [
-        './img/portfolio/urban1.png',
-        './img/portfolio/urban1.png',
-        './img/portfolio/urban1.png'
+        './img/portfolio/davichio1.png',
+        './img/portfolio/davichio2.png',
+        './img/portfolio/davichio3.png'
       ],
-      name: "Beauty Tables",
-      description: "",
+      name: "Davie and Chiyo",
+      description: "The client came to us with an issue with low conversion and we had only 20 hours to define the main problems and fix them.",
       date: "OCT 2021",
       tech: "JavaScript , Liquid , Shopify Theme , Shopify Templates , Shopify",
-      url: "urbanhome.co"
+      url: "davieandchiyo.com"
     },
     knives: {
       images: [
-        './img/portfolio/wolf1.jpg',
-        './img/portfolio/wolf2.jpg',
+        './img/portfolio/wolf1.png',
+        './img/portfolio/wolf2.png',
         './img/portfolio/wolf3.png'
       ],
       name: "Wolfgangs knives",
@@ -259,7 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let allSections = document.querySelectorAll(".section--for__link");
   let up_scroll_btn = document.querySelector('.up_scroll_btn__wrapper');
 
+
   document.addEventListener('scroll', () => {
+
     allSections.forEach(sec => {
       let top = window.scrollY;
       let offset = sec.offsetTop;
@@ -287,6 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 
+  // dark mode swithcer logi
   let switchToDark = document.querySelector('.switch')
   let switchToDarkInput = document.querySelector('.switch input')
   let body = document.querySelector("body");
@@ -301,4 +307,87 @@ document.addEventListener('DOMContentLoaded', () => {
       body.classList.add("dark");
     }
   })
+
+
+
+  //// nabmer increesing animation
+  const counters = document.querySelectorAll('.number__list__element h3 span');
+  const container = document.querySelector('#number-sec');
+
+  let active = false
+  document.addEventListener('scroll', () => {
+    if (pageYOffset > container.offsetTop - container.offsetHeight - 200 && !active) {
+      counters.forEach(counter => {
+        counter.innerText = 0
+        let count = 0;
+        function updateCount() {
+          const targer = parseInt(counter.dataset.count)
+          if (count < targer) {
+            if (counter.id === "happy_clients") {
+              count += 15
+            } else {
+              count += 1
+            }
+            counter.innerText = count
+            setTimeout(updateCount, 20)
+          } else {
+            counter.innerText = targer
+          }
+        }
+        updateCount()
+        active = true
+      })
+
+    }
+  })
+
+
+
+  /// pop ups logic
+  const pop_ups = document.querySelectorAll(".pop_up")
+
+  document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (key === "Escape") {
+      pop_ups.forEach(el => {
+        el.style.display = "none"
+      })
+    }
+  });
+
+
+  pop_ups.forEach(el => {
+    el.addEventListener('click', (e) => {
+      if (e.target.classList && e.target.classList.contains('pop_up')) {
+        e.target.style.display = "none"
+      }
+    })
+  });
+  const readMoreList = document.querySelectorAll("a.button__arrow")
+  readMoreList.forEach(readMoreListEl => {
+    readMoreListEl.addEventListener('click', () => handleReadMore(readMoreListEl.dataset.read))
+    function handleReadMore(id) {
+      const current_pop_up = document.querySelector(`.${id}`)
+      if (current_pop_up && current_pop_up.style.display !== "block")
+        document.querySelector(`.${id}`).style.display = "block";
+    }
+  });
+
+  // const cursorRounded = document.querySelector('.rounded');
+  // const cursorPointed = document.querySelector('.pointed');
+
+  // const moveCursor = (e)=> {
+
+  //   const mouseY = e.clientY;
+  //   const mouseX = e.clientX;
+  //   console.log('first', mouseY)
+  //   console.log('first', mouseX)
+  //   cursorRounded.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+  //   cursorPointed.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+
+  // }
+
+  // window.addEventListener('mousemove', moveCursor)
+
 })
