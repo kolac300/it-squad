@@ -155,6 +155,7 @@ h6 {
     /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+
 /*------------------- ui kit--------------------*/
 /*----------root----------*/
 :root {
@@ -330,6 +331,9 @@ h4 {
 .header-block {
     text-align: center;
     align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    
 }
 
 .header-block_title:not(:last-child) {
@@ -339,17 +343,17 @@ h4 {
 .header-block_subtitle {
     color: var(--color-primary);
     margin: 0px 0px 20px 0px;
-    padding-top: 170px;
+    padding-top: 30px;
     position: relative;
 }
 
-.header-block_subtitle .ball1 {
+.ball1 {
     position: absolute;
     top: 0;
     left: calc(50% - 75px);
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 150px ;
+    width: 150px ;
     z-index: 100;
     display: block;
     background: black;
@@ -362,7 +366,7 @@ h4 {
 
 
 
-.header-block_subtitle .ball2 {
+.ball2 {
     position: absolute;
     top: 0;
     left: calc(50% - 75px);
@@ -376,75 +380,33 @@ h4 {
     justify-content: center;
 }
 
-.header-block_subtitle .ball3 {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 75px);
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    z-index: 100;
-    background: radial-gradient(circle at 100px 100px, var(--color-yellow), #000);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.header-block_subtitle .ball4 {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 75px);
-    background: radial-gradient(circle at 100px 100px, var(--color-primary), #000);
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
 
 .ball1,
-.ball2,
-.ball3,
-.ball4 {
+.ball2{
     color: white;
 }
 
-body.dark .ball1,
-body.dark .ball2,
-body.dark .ball3,
-body.dark .ball4 {
-    color: rgb(0, 255, 13);
 
-}
 
 @media(max-width:767px) {
     .header-block_subtitle {
         padding-top: 90px;
     }
 
-    .header-block_subtitle .ball1,
-    .header-block_subtitle .ball2,
-    .header-block_subtitle .ball3,
-    .header-block_subtitle .ball4 {
+    .ball1,
+    .ball2 {
         left: calc(50% - 40px);
         height: 80px;
         width: 80px;
     }
 
-    .header-block_subtitle .ball1,
-    .header-block_subtitle .ball3 {
+    .ball1 {
         background: radial-gradient(circle at 60px 40px, var(--color-yellow), #000);
     }
 
 
-    .header-block_subtitle .ball2,
-    .header-block_subtitle .ball4 {
-
+    .ball2 {
         background: radial-gradient(circle at 60px 40px, var(--color-primary), #000);
-
     }
 
 }
@@ -476,7 +438,7 @@ body.dark .ball4 {
     justify-content: center;
     align-items: center;
     background-color: #e3e900;
-    background-image: linear-gradient(180deg, #e3e900 0%, #0514f2 100%);
+    background-image: linear-gradient(180deg, #e3e900 0%, var(--color-primary) 100%);
     color: white;
     transition: .5s;
 
@@ -484,13 +446,13 @@ body.dark .ball4 {
 
 body.dark .up_scroll_btn {
     background-color: red;
-    background-image: linear-gradient(180deg, red 0%, #0514f2 100%);
+    background-image: linear-gradient(180deg, red 0%, var(--color-primary) 100%);
 }
 
 
 .up_scroll_btn:hover {
 
-    box-shadow: rgba(17, 0, 255, 0.4) -5px 5px, rgba(17, 0, 255, 0.3) -10px 10px, rgba(17, 0, 255, 0.2) -15px 15px, rgba(17, 0, 255, 0.1) -20px 20px, rgba(17, 0, 255, 0.05) -25px 25px;
+    box-shadow: rgba(0, 157, 255, 0.4) -5px 5px, rgba(0, 157, 255, 0.3) -10px 10px, rgba(0, 157, 255, 0.2) -15px 15px, rgba(0, 157, 255, 0.1) -20px 20px;
 }
 
 /*---------perekluchatel' na dark temu--------------*/
@@ -577,15 +539,6 @@ body.dark .menu__icon svg path {
 
 body.dark .menu__link-mob {
     color: #fff;
-}
-
-
-body.dark .header__logo .light {
-    display: none;
-}
-
-body:not(.dark) .header__logo .dark {
-    display: none;
 }
 
 body.dark {
@@ -1361,6 +1314,96 @@ img {
     }
 }
 
+/* ---------------------- nubmers block ------------------ */
+.number__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    padding: 270px 0 0 0;
+    position: relative;
+}
+
+.number__list__header {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    transform: translate(-50%);
+
+}
+.number__list__header.header-block_subtitle{
+    top: 115px;
+}
+
+.number__list__element {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.number__list__element h3 {
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.number__list__element p {
+    font-size: 25px;
+}
+
+.number_icon {
+    position: absolute;
+    color: var(--color-primary);
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 90px !important;
+    text-align: center;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+body.dark .number__list__header,
+body.dark .number__list__element h3,
+body.dark .number__list__element p {
+    color: white;
+
+}
+
+body.dark .number_icon {
+    color: var(--color-yellow);
+}
+
+@media (max-width:767px) {
+    .number__list {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+    }
+
+    .number__list__element h3 {
+        font-size: 30px;
+    }
+
+    .number__list__element p {
+        font-size: 20px;
+    }
+
+    .number_icon {
+        font-size: 70px !important;
+    }
+
+    .number__list {
+
+        padding: 170px 0 0 0;
+    }
+
+    .number__list__header {
+        top: 90px;
+    }
+    .number__list__header.header-block_subtitle{
+        top: 130px;
+    }
+}
+
+
 /*---------our services-------------*/
 .our-services {}
 
@@ -1737,13 +1780,6 @@ img {
     }
 }
 
-;
-
-
-
-
-
-
 /*------------reviews-------------*/
 .reviews {}
 
@@ -1818,6 +1854,10 @@ img {
 }
 
 /*---------collaboration---------------*/
+.section--for__link{position: relative;
+    overflow: hidden;
+
+}
 .collaboration {}
 
 .collaboration__container {
@@ -1859,7 +1899,7 @@ img {
     z-index: 1;
 }
 
-@media(max-width:480px) {
+@media(max-width:767px) {
     .collaboration__container {
         flex-direction: column;
     }
@@ -1868,7 +1908,7 @@ img {
         justify-content: center;
         text-align: center;
         margin: 0 auto;
-        margin: 50px 0px 0px 0px;
+        margin: auto;
     }
 
     .collaboration__button {
@@ -2031,11 +2071,11 @@ img {
 
 /*-----------------------BubelsBackground------------------------*/
 .blue-bouble {
-    background-color: var(--color-primary);
+    background: var(--color-primary)
 }
 
 .yellow-bouble {
-    background-color: var(--color-yellow);
+    background: var(--color-yellow)
 }
 
 
@@ -2114,7 +2154,6 @@ img {
     }
 
     50% {
-        border-radius: 30%;
         transform: rotate(360deg);
     }
 
@@ -2129,7 +2168,6 @@ img {
     }
 
     50% {
-        border-radius: 30%;
         transform: rotate(360deg);
     }
 
@@ -2144,7 +2182,6 @@ img {
     }
 
     50% {
-        border-radius: 30%;
         transform: rotate(360deg);
     }
 
@@ -2159,11 +2196,171 @@ img {
     }
 
     50% {
-        border-radius: 30%;
+
         transform: rotate(360deg);
     }
 
     100% {
         top: 90%;
     }
+}
+
+.ball1 {
+    /* Animation to spin and move the sphere */
+    -webkit-animation: spin 1000ms linear infinite, moveLeftToRightspinin 7s linear infinite;
+    -moz-animation: spin 1000ms linear infinite, moveLeftToRightspinin 7s linear infinite;
+    -ms-animation: spin 1000ms linear infinite, moveLeftToRightspinin 7s linear infinite;
+    animation: spin 1000ms linear infinite, moveLeftToRightspinin 7s linear infinite;
+
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+
+    position: absolute;
+    left: 0;
+}
+
+
+/* Move sphere from left to right */
+@-moz-keyframes moveLeftToRightspinin {
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left:120%;
+    }
+}
+
+@-ms-keyframes moveLeftToRightspinin {
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left:120%;
+    }
+}
+
+@keyframes moveLeftToRightspinin {
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left:120%;
+    }
+}
+
+@-webkit-keyframes moveLeftToRightspinin {
+    0% {
+        left: -300px;
+    }
+
+    100% {
+        left:120%;
+    }
+
+}
+.ball2 {
+    /* Animation to spin and move the sphere */
+    -webkit-animation: spin 1000ms linear infinite, moveLeftToRight 7s linear infinite;
+    -moz-animation: spin 1000ms linear infinite, moveLeftToRight 7s linear infinite;
+    -ms-animation: spin 1000ms linear infinite, moveLeftToRight 7s linear infinite;
+    animation: spin 1000ms linear infinite, moveLeftToRight 7s linear infinite;
+
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+
+    position: absolute;
+    left: 0;
+}
+
+/* Spinning the sphere using key frames */
+@-ms-keyframes spin {
+    from {
+        -ms-transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/* Move sphere from left to right */
+@-moz-keyframes moveLeftToRight {
+    0% {
+        left:120%;
+       
+    }
+
+    100% {
+        left: -300px;
+    }
+}
+}
+
+@-ms-keyframes moveLeftToRight {
+    0% {
+        left:120%;
+       
+    }
+
+    100% {
+        left: -300px;
+    }
+}
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        left:120%;
+       
+    }
+
+    100% {
+        left: -300px;
+    }
+}
+
+@-webkit-keyframes moveLeftToRight {
+    0% {
+        left:120%;
+       
+    }
+
+    100% {
+        left: -300px;
+    }
+}
+
 }

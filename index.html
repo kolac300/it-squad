@@ -13,12 +13,13 @@
   <link
     href="https://upwork-usw2-prod-assets-static.s3.us-west-2.amazonaws.com/org-logo/1582128959346147328?date=1685108683931"
     rel="icon" type="image/png" sizes="32x32">
-
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
 
-  <section class="up_scroll_btn__wrapper" >
+  <section class="up_scroll_btn__wrapper">
     <a class="up_scroll_btn" href="#">Scroll to Top</a>
   </section>
 
@@ -62,7 +63,6 @@
     <header class="header">
       <div class="header__container _container">
         <a href="#" class="header__logo">
-          <img class="dark" src="./img/logo/logoDark.svg" alt="img">
           <img class="light" src="./img/logo/logo.svg" alt="img">
         </a>
         <div class="menu__icon tablet-show">
@@ -84,9 +84,12 @@
               <a href="#about_us" class="menu__link fw-400 p2">About</a>
             </li>
             <li class="wow animate__heartBeat menu__item" data-wow-delay="10s" data-wow-iteration="1">
+              <a href="#number-sec" class="menu__link p2">Our Facts</a>
+            </li>
+            <li class="wow animate__heartBeat menu__item" data-wow-delay="11s" data-wow-iteration="1">
               <a href="#services" class="menu__link fw-400 p2">Services</a>
             </li>
-            <li class=" wow animate__hinge menu__item" data-wow-delay="12s" data-wow-iteration="1">
+            <li class=" wow animate__hinge menu__item" data-wow-delay="13s" data-wow-iteration="1">
               <a href="#projects" class="menu__link fw-400 p2">Projects</a>
             </li>
           </ul>
@@ -106,6 +109,9 @@
             </li>
             <li class="menu__item-mob">
               <a href="#about_us" class="menu__link-mob fw-400 h4">About</a>
+            </li>
+            <li class="menu__item-mob">
+              <a href="#number-sec" class="menu__link-mob h4">Our Facts</a>
             </li>
             <li class="menu__item-mob">
               <a href="#services" class="menu__link-mob fw-400 h4">Services</a>
@@ -265,12 +271,12 @@
         </article>
       </section>
       <section id="about_us" class="section--for__link page__our-team our-team">
+        <div data-wow-delay="0.7s" class="ball1"></div>
         <div class="our-team__container _container">
           <div class="our-team__header header-block">
-            <h3 class="wow animate__tada header-block_subtitle fw-600">About Us
-              <div data-wow-delay="0.7s" class="wow bounceInUp ball1">
-                It Squad
-              </div>
+            <h3 class="wow animate__tada header-block_subtitle fw-600">
+              About Us
+              It Squad
             </h3>
             <h2 class="wow animate__rubberBand header-block_title fw-700">Our Team</h2>
           </div>
@@ -297,11 +303,51 @@
           </div>
         </div>
       </section>
+      <section id="number-sec" class="section--for__link">
+        <div class="_container">
+          <div class="number__list">
+            <h3 class="number__list__header header-block_subtitle fw-600">Facts
+            </h3>
+            <h2 class="number__list__header our-services__header header-block_title fw-700">Our Facts</h2>
+            <div class="number__list__element">
+              <span class="number_icon material-symbols-outlined">
+                sentiment_satisfied
+              </span>
+              <h3 class="wow animate__zoomInDown">2400+</h3>
+              <p>Happy Clients</p>
+            </div>
+            <div class="number__list__element">
+              <span class="number_icon material-symbols-outlined">
+                business_center
+              </span>
+              <h3 class="wow animate__zoomInDown">150+</h3>
+              <p>Compleated Projects</p>
+            </div>
+            <div class="number__list__element">
+              <span class="number_icon  material-symbols-outlined">
+                cloud_upload
+              </span>
+              <h3 class="wow animate__zoomInUp">120+ k</h3>
+              <p>File Downloaded</p>
+            </div>
+            <div class="number__list__element">
+              <span class="number_icon material-symbols-outlined">
+                social_leaderboard
+              </span>
+              <h3 class="wow animate__zoomInUp">10+</h3>
+              <p>Award Win</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section id="services" class="section--for__link page__our-services our-services">
+        <div data-wow-delay="0.7s" class="ball2"></div>
         <div class="our-services__container _container">
           <div class="our-services__header header-block">
+           
             <h3 class="header-block_subtitle fw-600">Our Services
-              <div data-wow-delay="0.7s" class="wow rollIn ball2">It Squad</div>
             </h3>
           </div>
           <div class="our-services__text-column">
@@ -448,10 +494,11 @@
         </div>
       </section>
       <section id="projects" class="section--for__link page__portfolio portfolio">
+        <div data-wow-delay="0.7s" class="ball1"></div>
         <div class="portfolio__container _container">
           <div class="portfolio__header header-block">
+            
             <h3 class="wow animate__tada header-block_subtitle fw-700">Our Portfolio
-              <div data-wow-delay="0.7s" class="wow bounceInRight ball3">It Squad</div>
             </h3>
             <h2 class="wow animate__rubberBand header-block_title fw-700">What do we do</h2>
             <div class="header-block_text fw-400 p">all projects that we have already done , proven can help to use more
@@ -512,13 +559,13 @@
             <div class="swiper swiper-style1">
               <div class="swiper-wrapper">
                 <div class="portfolio__description-image swiper-slide">
-                  <img src="./img/portfolio/01.jpg" alt="">
+                  <img src="./img/portfolio/01.png" alt="">
                 </div>
                 <div class="portfolio__description-image swiper-slide">
-                  <img src="./img/portfolio/02.jpg" alt="">
+                  <img src="./img/portfolio/03.png" alt="">
                 </div>
                 <div class="portfolio__description-image swiper-slide">
-                  <img src="./img/portfolio/01.jpg" alt="">
+                  <img src="./img/portfolio/01.png" alt="">
                 </div>
               </div>
             </div>
@@ -544,8 +591,8 @@
       <section class="page__reviews reviews">
         <div class="reviews__container _container">
           <div class="reviews__header header-block">
+
             <h3 class="wow animate__tada header-block_subtitle fw-700">Testimonial
-              <div data-wow-delay="0.7s" class="wow bounceInUp ball4">It Squad</div>
             </h3>
             <h2 class="wow animate__rubberBand header-block_title fw-700">People Talk about us</h2>
           </div>
@@ -728,18 +775,21 @@
               <h4 class="footer__label fw-700">We’re hiring!</h4>
               <nav class="footer__menu menu-footer">
                 <ul class="menu-footer__list">
-                  <li class="menu-footer__item"><a href="" class="menu-footer__link p2">Terms of Service</a></li>
-                  <li class="menu-footer__item"><a href="" class="menu-footer__link p2">Privacy Policy</a></li>
+                  <li class="menu-footer__item"><a href="#" class="menu-footer__link p2">Terms of Service</a></li>
+                  <li class="menu-footer__item"><a href="#" class="menu-footer__link p2">Privacy Policy</a></li>
                 </ul>
               </nav>
             </div>
+
             <div class="footer__column">
               <h4 class="footer__label fw-700">Company</h4>
               <nav class="footer__menu menu-footer">
                 <ul class="menu-footer__list">
-                  <li class="menu-footer__item"><a href="" class="menu-footer__link p2">Home</a></li>
-                  <li class="menu-footer__item"><a href="" class="menu-footer__link p2">About Us</a></li>
-                  <li class="menu-footer__item"><a href="" class="menu-footer__link p2">Contact Us</a></li>
+                  <li class="menu-footer__item"><a href="#" class="menu-footer__link p2">Home</a></li>
+                  <li class="menu-footer__item"><a href="#about_us" class="menu-footer__link p2">About</a></li>
+                  <li class="menu-footer__item"><a href="#number-sec" class="menu-footer__link p2">Our Facts</a></li>
+                  <li class="menu-footer__item"><a href="#services" class="menu-footer__link p2">Services</a></li>
+                  <li class="menu-footer__item"><a href="#projects" class="menu-footer__link p2">Projects</a></li>
                 </ul>
               </nav>
             </div>
