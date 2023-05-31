@@ -1756,6 +1756,11 @@ body.dark .number_icon {
         width: 100% !important;
     }
 }
+@media(max-width:767px) {
+    .portfolio__header{
+        padding-top: 50px;
+    }
+}
 
 
 @media(max-width:480px) {
@@ -1978,6 +1983,13 @@ body.dark .item-review__text a {
     color: var(--color-yellow);
 }
 
+@media(max-width:767x) {
+    .reviews__header {
+        margin: 0px;
+        padding-top: 50px;
+    }
+
+}
 @media(max-width:480px) {
     .reviews__header {
         margin: 0px;
