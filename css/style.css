@@ -14,7 +14,7 @@
 }
 
 ::selection {
-    color: var(--color-yellow);
+    color: #FFCC00;
 }
 
 :focus,
