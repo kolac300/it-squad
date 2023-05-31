@@ -345,6 +345,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /// pop ups logic
   const pop_ups = document.querySelectorAll(".pop_up")
+  const crossesc = document.querySelectorAll('.material-symbols-outlined')
+
 
   document.addEventListener('keydown', (event) => {
     const key = event.key;
@@ -361,6 +363,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target.classList && e.target.classList.contains('pop_up')) {
         e.target.style.display = "none"
       }
+    })
+  });
+  crossesc.forEach(el => {
+    el.addEventListener('click', () => {
+      el.closest(".pop_up").style.display = "none"
     })
   });
   const readMoreList = document.querySelectorAll("span.button__arrow")
