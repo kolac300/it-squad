@@ -345,7 +345,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /// pop ups logic
   const pop_ups = document.querySelectorAll(".pop_up")
-  const crossesc = document.querySelectorAll('.material-symbols-outlined')
+  const crossesc = document.querySelectorAll('.close')
 
 
   document.addEventListener('keydown', (event) => {

@@ -792,10 +792,11 @@ body.dark .swiper-pagination-default .swiper-pagination-bullet-active {
     outline: 1px solid white;
 }
 
-.material-symbols-outlined {
+.close {
     position: absolute;
     right: 10px;
     top: 10px;
+    cursor: pointer;
 }
 
 .item-portfolio__background {
