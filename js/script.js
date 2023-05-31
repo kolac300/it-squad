@@ -363,7 +363,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   });
-  const readMoreList = document.querySelectorAll("a.button__arrow")
+  const readMoreList = document.querySelectorAll("span.button__arrow")
   readMoreList.forEach(readMoreListEl => {
     readMoreListEl.addEventListener('click', () => handleReadMore(readMoreListEl.dataset.read))
     function handleReadMore(id) {

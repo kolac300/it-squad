@@ -407,9 +407,6 @@ h4 {
 
 
 @media(max-width:767px) {
-    .header-block_subtitle {
-        padding-top: 90px;
-    }
 
     .ball1,
     .ball2 {
@@ -786,7 +783,6 @@ body.dark .swiper-pagination-default .swiper-pagination-bullet {
 }
 
 .swiper-pagination-default .swiper-pagination-bullet-active {
-
     outline: 1px solid var(--color-primary);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -926,6 +922,7 @@ body {
     margin: 0px auto;
     padding: 0px 15px;
     box-sizing: content-box;
+    position: relative;
 }
 
 img {
@@ -1279,7 +1276,8 @@ img {
 .our-team__container {}
 
 .our-team__header {
-    margin: 120px 0px 38px 0px;
+    margin: 0px 0px 38px 0px;
+    padding-top: 140px;
 }
 
 .our-team__body {}
@@ -1292,11 +1290,11 @@ img {
 .our-team__video {
     display: flex;
     width: 50%;
+    position: relative;
 }
 
 .our-team__video img {
     width: 100%;
-    margin-right: 20px;
 }
 
 .our-team__items {
@@ -1304,7 +1302,7 @@ img {
 }
 
 .items-column {
-    margin: 63px 0px 0px 0px;
+    margin: 63px 0px 0px 20px;
 }
 
 .items-column__text {
@@ -1358,10 +1356,14 @@ img {
     }
 }
 
-@media(max-width:480px) {
+@media (max-width:767px) {
     .our-team__header {
-        margin: 70px 0px 0px 0px;
+        padding-top: 60px;
+        margin-bottom: 0;
     }
+}
+
+@media(max-width:480px) {
 
     .items-column {
         margin: 20px 0px 0px 0px;
@@ -1386,20 +1388,20 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content: space-between;
-    padding: 270px 0 0 0;
+    padding: 290px 0 0 0;
     position: relative;
 }
 
 .number__list__header {
     position: absolute;
     left: 50%;
-    top: 150px;
+    top: 170px;
     transform: translate(-50%);
 
 }
 
 .number__list__header.header-block_subtitle {
-    top: 115px;
+    top: 130px;
 }
 
 .number__list__element {
@@ -1426,7 +1428,7 @@ img {
     font-size: 90px !important;
     text-align: center;
     opacity: 0.2;
-    z-index: -1;
+    z-index: 0;
 }
 
 body.dark .number__list__header,
@@ -1459,7 +1461,6 @@ body.dark .number_icon {
     }
 
     .number__list {
-
         padding: 170px 0 0 0;
     }
 
@@ -1468,7 +1469,7 @@ body.dark .number_icon {
     }
 
     .number__list__header.header-block_subtitle {
-        top: 0;
+        top: 50px;
     }
 }
 
@@ -1476,7 +1477,9 @@ body.dark .number_icon {
 /*---------our services-------------*/
 .our-services {}
 
-.our-services__container {}
+.our-services__container {
+    padding-top: 150px;
+}
 
 .our-services__text-column {
     display: flex;
@@ -1485,13 +1488,12 @@ body.dark .number_icon {
 
 .our-services__header {
     text-align: left;
-    margin: 160px 0px 0px 0px;
+    margin: 0;
 }
 
 .our-services__info {
     margin: 0px 168px 0px 0px;
     width: 43.34%;
-    max-height: 540px;
     opacity: 0;
     transition: all 0.4s;
     position: absolute;
@@ -1503,6 +1505,7 @@ body.dark .number_icon {
 .our-services__info._active {
     opacity: 1;
     transform: translateX(0);
+    z-index: 10;
 }
 
 .our-services__text {}
@@ -1519,6 +1522,7 @@ body.dark .number_icon {
 
 .button__arrow {
     color: var(--color-primary);
+    cursor: pointer;
 }
 
 .our-services__offers {
@@ -1595,9 +1599,6 @@ body.dark .number_icon {
 
     .our-services__header {}
 
-    .our-services__info {
-        margin: 0px 70px 0px 0px;
-    }
 
     .offer_image {
         margin: 35px 60px 27px 60px;
@@ -1618,8 +1619,12 @@ body.dark .number_icon {
 
 
 @media(max-width:767px) {
+    .our-services__container {
+        padding-top: 50px;
+    }
+
     .our-services__header {
-        margin: 50px 0px 20px 0px;
+        margin: 0px 0px 20px 0px;
     }
 
     .our-services__text-column {
@@ -1685,7 +1690,8 @@ body.dark .number_icon {
 .portfolio__container {}
 
 .portfolio__header {
-    margin: 130px 0px 73px 0px;
+    margin: 0px 0px 73px 0px;
+    padding-top: 140px;
 }
 
 .header-block_text {
@@ -1748,7 +1754,8 @@ body.dark .number_icon {
 
 @media(max-width:480px) {
     .portfolio__header {
-        margin: 40px 0px 30px 0px;
+        margin: 0;
+        padding-top: 50px;
     }
 
     .item-portfolio {
@@ -1888,7 +1895,8 @@ body.dark .number_icon {
 .reviews__container {}
 
 .reviews__header {
-    margin: 110px 0px 50px 0px;
+    margin: 0 0px 50px 0px;
+    padding-top: 150px;
 }
 
 .review__items {}
@@ -1898,7 +1906,7 @@ body.dark .number_icon {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     cursor: grab;
     border-radius: 20px;
-    min-height: 422px;
+    min-height: 443px;
 }
 
 .item-review:not(:last-child) {
@@ -1907,18 +1915,24 @@ body.dark .number_icon {
 
 .item-review_top {
     display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .item-review_top__image {
     height: 70px;
     width: 70px;
-    margin: 35.25px 15px 14px 26px
+    margin: 35.25px 15px 14px 26px;
+
 }
 
 .item-review_top__image img {
     height: 70px;
     width: 70px;
     min-width: 70px;
+    border-radius: 50%;
+    border: 1px solid rgb(233, 231, 231);
 }
 
 .item-review_top__info {
@@ -1948,9 +1962,20 @@ body.dark .number_icon {
     line-height: 155%;
 }
 
+.item-review__text a {
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+body.dark .item-review__text a {
+    text-decoration: none;
+    color: var(--color-yellow);
+}
+
 @media(max-width:480px) {
     .reviews__header {
-        margin: 60px 0px 30px 0px;
+        margin: 0px;
+        padding-top: 50px;
     }
 
 }
@@ -2043,6 +2068,7 @@ body.dark .number_icon {
 .footer__main {
     display: flex;
     padding-top: 135px;
+    justify-content: center;
 }
 
 .footer__logo {}
@@ -2165,10 +2191,7 @@ body.dark .number_icon {
         min-height: 335px;
     }
 
-    .item-review_top {
-        align-items: center;
-        justify-content: center;
-    }
+
 }
 
 /*-----------------------BubelsBackground------------------------*/
@@ -2342,9 +2365,10 @@ body.dark .pop_up {
     font-size: 30px;
 }
 
-.pop_up div p {
+.pop_up div li {
     margin-bottom: 30px;
     font-size: 17px;
+    text-align: left;
 }
 
 body.dark .pop_up div {
@@ -2361,11 +2385,140 @@ body.dark .pop_up div {
         font-size: 20px;
     }
 
-    .pop_up div p {
-        font-size: 14px;
+    .pop_up div li {
+        font-size: 13px;
     }
 
-    .pop_up div{
-        padding:10px;
+    .pop_up div {
+        padding: 10px;
     }
+}
+
+/* -------------   animated dot blocks    --------------- */
+
+.animated__dot__block1,
+.animated__dot__block2,
+.animated__dot__block3,
+.animated__dot__block4,
+.animated__dot__block5,
+.animated__dot__block6,
+.animated__dot__block7,
+.animated__dot__block8,
+.animated__dot__block9,
+.animated__dot__block10 {
+    width: auto;
+    display: grid;
+    grid-template-columns: 9px 9px 9px 9px 9px 9px;
+    gap: 15px;
+    position: absolute;
+    opacity: 0.9;
+
+}
+
+
+
+.animated__dot__block1 {
+    left: 5%;
+    top: 643px;
+    transform: rotate(30deg);
+}
+
+.animated__dot__block2 {
+    right: 15%;
+    top: 252px;
+    transform: rotate(-30deg);
+}
+
+.animated__dot__block3 {
+    top: 64%;
+    right: 12%;
+}
+
+.animated__dot__block4 {
+    left: 51%;
+    top: 36%;
+}
+
+.animated__dot__block5 {
+    left: 2%;
+    transform: rotate(30deg);
+    top: 89%;
+}
+
+.animated__dot__block6 {
+    left: 78%;
+    top: 19%;
+    transform: rotate(-30deg);
+
+}
+
+.animated__dot__block7 {
+    top: -15px;
+    right: -17px;
+    z-index: 0;
+}
+
+.animated__dot__block8 {
+    left: -15px;
+    bottom: -17px;
+    z-index: 0;
+}
+
+.animated__dot__block9 {
+    top: -15px;
+    right: -17px;
+    z-index: 0;
+}
+
+.animated__dot__block10 {
+    left: -16px;
+    bottom: 32px;
+    z-index: 0;
+}
+
+
+
+.animated__dot__block1 div,
+.animated__dot__block5 div,
+.animated__dot__block7 div,
+.animated__dot__block9 div,
+.animated__dot__block3 div {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 2px 3px, var(--color-primary), #000);
+
+}
+
+.animated__dot__block2 div,
+.animated__dot__block6 div,
+.animated__dot__block8 div,
+.animated__dot__block10 div,
+.animated__dot__block4 div {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 2px 3px, var(--color-yellow), #000);
+}
+
+@media screen and (max-width:767px) {
+
+    .animated__dot__block3 {
+        top: 76%;
+        right: 19%;
+    }
+
+    .animated__dot__block4 {
+        left: 21%;
+        top: 42%;
+    }
+
+    .animated__dot__block6 {
+        left: 57%;
+    }
+
+    .animated__dot__block5 {
+        top: 71%;
+    }
+
 }
