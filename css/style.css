@@ -93,7 +93,7 @@ img {
 
 h1,
 h2,
-h3,
+h3 .h3,
 h4,
 h5,
 h6 {
@@ -181,7 +181,7 @@ h2 {
 }
 
 
-h3 {
+h3,.h3 {
     font-size: 24px;
     line-height: 1;
 }
@@ -236,7 +236,7 @@ h4 {
     }
 
 
-    h3 {
+    h3,.h3 {
         font-size: calc(14px + (24 - 14) * ((100vw - 320px) / (1440 - 320)));
     }
 
@@ -260,7 +260,7 @@ h4 {
     }
 
 
-    h3 {
+    h3,.h3 {
         font-size: 14px;
     }
 
@@ -586,7 +586,8 @@ body.dark .switch__wrapper {
     text-align: center;
 }
 
-.switch input {
+.switch input,
+.switch label {
     opacity: 0;
     width: 0;
     height: 0;
@@ -1737,8 +1738,9 @@ body.dark .number_icon {
         width: 100% !important;
     }
 }
+
 @media(max-width:767px) {
-    .portfolio__header{
+    .portfolio__header {
         padding-top: 50px;
     }
 }
@@ -2511,4 +2513,9 @@ body.dark .pop_up div {
         top: 71%;
     }
 
+}
+.sr-only{
+height: 0;
+width: 0;
+opacity: 0;
 }
