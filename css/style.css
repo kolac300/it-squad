@@ -2193,5 +2193,5 @@ body.dark .pop_up div {
     display: block;
     height: 0px;
     width: 0px;
-    visibility: hidden;
+    opacity: 0;
 }
